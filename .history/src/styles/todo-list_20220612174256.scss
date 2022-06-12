@@ -1,0 +1,13 @@
+.todo-list {
+  &__bottom {
+    margin-top: 30px;
+  }
+  &__item {
+    margin-bottom: 20px;
+    width: 400px;
+    text-align: left;
+    span {
+      margin-right: 30px;
+    }
+  }
+}
