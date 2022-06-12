@@ -1,4 +1,6 @@
 import React from "react";
+import ChildComponents from "./ChildComponents";
+import FormComponents from "./FormComponents";
 
 class MyComponents extends React.Component {
   state = {
@@ -6,16 +8,24 @@ class MyComponents extends React.Component {
     class: "DHKHMT17B",
     school: "IUH",
     address: "Binh Dinh Province",
+    student: [
+      { id: "A1", class: "DHTH17A", branch: "CNTT" },
+      { id: "B2", class: "DHMK17B", branch: "Marketing" },
+      { id: "C3", class: "DHOT17C", branch: "IOT" },
+    ],
   };
-
   handleChangePress = (event) => {
     this.setState({
       name: event.target.value,
     });
   };
-
   handleClickButton = () => {
     alert("Clicked me !");
+  };
+  addOneStudent = (student) => {
+    this.setState({
+      student: [...this.state.student, student],
+    });
   };
   render() {
     return (
@@ -36,6 +46,8 @@ class MyComponents extends React.Component {
             Click me
           </button>
         </div>
+        <FormComponents addOneStudent={this.addOneStudent} />
+        <ChildComponents list={this.state.student} />
       </>
     );
   }

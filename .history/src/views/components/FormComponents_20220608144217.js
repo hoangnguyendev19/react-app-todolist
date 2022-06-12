@@ -1,0 +1,43 @@
+import React from "react";
+
+class FormComponents extends React.Component {
+  handleChangePress = (event) => {
+    // console.log(event);
+  };
+  handleSubmit = (event) => {
+    event.preventDefaut();
+    console.log("Check data: ", this.state);
+  };
+  render() {
+    return (
+      <>
+        <h2>Form Information</h2>
+        <form action="#">
+          <label htmlFor="">Ma SV: </label>
+          <input
+            type={"text"}
+            onChange={(event) => this.handleChangePress(event)}
+          />
+          <div></div>
+          <label htmlFor="">Lop: </label>
+          <input
+            type={"text"}
+            onChange={(event) => this.handleChangePress(event)}
+          />
+          <div></div>
+          <label htmlFor="">Nganh: </label>
+          <input
+            type={"text"}
+            onChange={(event) => this.handleChangePress(event)}
+          />
+          <input
+            type={"submit"}
+            onClick={(event) => this.handleSubmit(event)}
+          />
+        </form>
+      </>
+    );
+  }
+}
+
+export default FormComponents;
